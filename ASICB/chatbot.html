@@ -44,7 +44,8 @@
 		</div>
 
 		<script type="text/javascript">
-      var r = document.getElementById('result');
+			var speechRecognizer = new webkitSpeechRecognition();
+    			var r = document.getElementById('result');
 			var trigger = [
 				["hi","hey","hello"], 
 				["how are you", "how is life", "how are things"],
