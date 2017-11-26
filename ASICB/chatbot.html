@@ -159,7 +159,10 @@
  							}
  						}
  						r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
- 					} else {
+					}
+ 					speechRecognizer.onerror = function (event) {
+ 					};
+ 				} else if (speechRecognizer){
 						speechRecognizer.continuous = false;
 						speechRecognizer.interimResults = false;
 						speechRecognizer.lang = 'en-IN';
@@ -168,10 +171,7 @@
 						
 						key = 13;
 						key = e.which || e.keyCode;
-				  }
- 					speechRecognizer.onerror = function (event) {
- 					};
- 				}else{
+				  } else {
  					r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
  				}
 		</script>
