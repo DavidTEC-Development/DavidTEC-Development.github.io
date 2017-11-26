@@ -164,12 +164,11 @@
  					speechRecognizer.onerror = function (event) {
  					};
  				} else if (speechRecognizer){
-						speechRecognizer.continuous = false;
-						speechRecognizer.interimResults = false;
-						speechRecognizer.lang = 'en-IN';
 						speechRecognizer.stop();
 						speechRecording = false;
-						
+					
+						document.querySelector("#input").addEventListener("keypress", function(e));
+					
 						key = 13;
 						key = e.which || e.keyCode;
 				  } else {
