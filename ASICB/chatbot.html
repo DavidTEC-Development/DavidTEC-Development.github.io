@@ -39,7 +39,7 @@
 				<div>user: <span id="user"></span></div>
 				<div>chatbot: <span id="chatbot"></span></div>
 				<div><input id="input" type="text" placeholder="say anything..." autocomplete="off"/></div>
-        <button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
+      				<button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
 			</th></table>
 		</div>
 
@@ -116,7 +116,7 @@
 					for(var y=0; y<array.length; y++){
 						if(arr[x][y] == string){
 							items = array[x];
-							item =  items[Math.floor(Math.random()*items.length)];
+							item =  items[Math.floor(Math.random()*items.length)];t
 						}
 					}
 				}
@@ -132,35 +132,7 @@
 				utterance.pitch = 2; //0-2 interval
 				speechSynthesis.speak(utterance);
 			}
-			function startConverting () {
-				if('webkitSpeechRecognition' in window){
-					var speechRecognizer = new webkitSpeechRecognition();
-					speechRecognizer.continuous = true;
-					speechRecognizer.interimResults = true;
-					speechRecognizer.lang = 'en-IN';
-					speechRecognizer.start();
 
-					var finalTranscripts = '';
-
-					speechRecognizer.onresult = function(event){
-						var interimTranscripts = '';
-						for(var i = event.resultIndex; i < event.results.length; i++){
-							var transcript = event.results[i][0].transcript;
-							transcript.replace("\n", "<br>");
-							if(event.results[i].isFinal){
-								finalTranscripts += transcript;
-							}else{
-								interimTranscripts += transcript;
-							}
-						}
-						r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
-					};
-					speechRecognizer.onerror = function (event) {
-					};
-				}else{
-					r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
-				}
-			}
 		</script>
 	</body>
 </html>
