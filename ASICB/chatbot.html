@@ -159,7 +159,7 @@
  							}
  						}
  						r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
- 					} else if (speechRecording) {
+ 					} else {
 						speechRecognizer.continuous = false;
 						speechRecognizer.interimResults = false;
 						speechRecognizer.lang = 'en-IN';
@@ -167,6 +167,7 @@
 						speechRecording = false;
 						
 						key = 13;
+						key = e.which || e.keyCode;
 				  }
  					speechRecognizer.onerror = function (event) {
  					};
