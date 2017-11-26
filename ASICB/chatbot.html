@@ -60,7 +60,8 @@
 				["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
 				["bye", "good bye", "goodbye", "see you later"],
 				["fuck", "hell", "shit", "dildo", "whore"],
-				["Yes", "No"]
+				["Yes", "No"],
+				["Found a bug", "bug found"]
 			];
 			var reply = [
 				["Hi","Hey","Hello", "Melohi", "Heyyyy!"], 
@@ -77,7 +78,8 @@
 				["Tell me a story", "Tell me a joke", "Tell me about yourself", "You are welcome"],
 				["Bye", "Goodbye", "See you later"],
                                 ["That's not nice!"],
-                                ["Cool to know!"]
+                                ["Cool to know!"],
+				["Wow, please report it to DavidTEC on his site which you should be on. Report it with the contact form currently."]
 			];
 			var alternative = ["Sorry, I didn't get that."];
 			document.querySelector("#input").addEventListener("keypress", function(e){
@@ -94,7 +96,7 @@
 				try{
 					var product = input + "=" + eval(input);
 				} catch(e){
-					var text = (input.toLowerCase()).replace(/[^\w\s\d]/gi, ""); //remove all chars except words, space and 
+					var text = (input.toLowerCase()).replace(/[^\w\s\d]/gi,/</> ""); //remove all chars except words, space and 
 					text = text.replace(/ a /g, " ").replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "");
 					if(compare(trigger, reply, text)){
 						var product = compare(trigger, reply, text);
